@@ -1,9 +1,9 @@
 message(STATUS "Construindo programa")
 
-set(target uBase_app)
+set(target uBase)
 
 set(sources
-	main.c
+	uBase.c
 )
 
 add_executable(${target} ${sources})
