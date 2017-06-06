@@ -1,9 +1,29 @@
 sudo: required
-dist: zesty
 language: c
 
 matrix:
   include:
+    # works on Precise and Trusty
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.9
+      env:
+         - COMPILER="CC=gcc-4.9 && CXX=g++-4.9"
+
+    # works on Precise and Trusty
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env:
+         - COMPILER="CC=gcc-5 && CXX=g++-5"
     # works on Precise and Trusty
     - compiler: gcc
     - os: linux
@@ -14,7 +34,7 @@ matrix:
           packages:
             - g++-6
       env:
-        - COMPILER="CC=gcc-6"
+        - COMPILER="CC=gcc-6 && CXX=g++-6"
 
 before_install:
   - eval "${COMPILER}"
