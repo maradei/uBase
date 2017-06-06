@@ -1,9 +1,11 @@
+sudo: required
+dist: zesty
 language: c
-comiler: gcc
 
 matrix:
   include:
     # works on Precise and Trusty
+    - compiler: gcc
     - os: linux
       addons:
         apt:
@@ -15,4 +17,9 @@ matrix:
         - MATRIX_EVAL="CC=gcc-6"
 
 before_install:
-    - eval "${MATRIX_EVAL}"
+  - eval "${MATRIX_EVAL}"
+
+script:
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_CC_COMPILER=$COMPILER .. && make
