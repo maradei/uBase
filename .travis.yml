@@ -1,7 +1,8 @@
 sudo: required
 dist: precise
 language: c
-
+notifications:
+  email: false
 matrix:
   include:
     # works on Precise and Trusty
