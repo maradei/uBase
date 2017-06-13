@@ -5,7 +5,7 @@ uBase - Microgerenciador de Banco de dados
 
 Descrição
 ---------
-Gerenciador de arquivos criado pelos discentes da disciplina como requisito para avalição do 3° crédito
+Gerenciador de arquivos criado pelos discentes da disciplina como requisito para avaliação na disciplina CET082
 
 Ferramentas
 -----------
