@@ -1,7 +1,7 @@
 uBase - Microgerenciador de Banco de dados
 ==========================================
 
-[![Build Status](https://travis-ci.org/uesc-ori/uBase.svg?branch=master)]
+[![Build Status](https://travis-ci.org/uesc-ori/uBase.svg?branch=master)](https://travis-ci.org/uesc-ori/uBase)
 
 Descrição
 ---------
