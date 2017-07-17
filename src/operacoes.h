@@ -1,4 +1,5 @@
-#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /****
 *
@@ -135,7 +136,7 @@ int arquivoExiste(char *caminho){
 ****/
 void * ordenarRegistros(void *vet, int tam, fptrOrdenar fOrdenar){
 	if(fOrdenar != NULL){
-		return fOrdenar(vet,int);
+		return fOrdenar(vet,tam);
 	}else{
 		return NULL;
 		printf("Função ainda não implementada.\n");
