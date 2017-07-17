@@ -1,12 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct info{
+typedef struct
+{
+    int id;
+    char *nome;
+    double valor;
+}dado;
+
+typedef struct info
+{
     int id;
     char nome[256];
 }info; //fazendo estrutura dado para armazemar o ID relacionado ao nome
 
-struct elemento{
+struct elemento
+{
    info dados;
     struct elemento *prox;
 }; //definindo que cada elemento da lista posui os dados de um aluno e aponta para o prox
@@ -20,10 +29,12 @@ void LiberaL(Lista*);
 int ConsultaNome(Lista*, char *);
 int InsereL(Lista*, info);
 int Lvazia(Lista*);
+int insere_do_arq(void)
 
 
 
-int main(){
+int main()
+{
   
     return 0;
 }
@@ -31,7 +42,8 @@ int main(){
 //(*li) = o que ele aponta
 // *li o que esta sendo apontado
 
-Lista* CriaL(){
+Lista* CriaL()
+{
     Lista* li; //criando a cabeca da lista
     li = (Lista*) malloc(sizeof(Lista)); //fazendo a cabeca apontar bara alguem
     if(li != NULL) //foi bem sucedido?
@@ -40,10 +52,13 @@ Lista* CriaL(){
 }
 
 
-void LiberaL(Lista* li){ //libera a lista por completo
-    if(li != NULL){ //tem algum elemento na lista?
+void LiberaL(Lista* li)
+{ //libera a lista por completo
+    if(li != NULL)
+    { //tem algum elemento na lista?
         Elem* aux; //criando ponteiro auxiliar para apontar para o elemento que eu quero remover
-        while((*li) != NULL){ //minha cabeca aponta para o final (vazio, null?)
+        while((*li) != NULL)
+        { //minha cabeca aponta para o final (vazio, null?)
             aux = *li; //auxiliar vai apontar para o mesmo elemento que a minha cabeca aponta
             *li = (*li)->prox; //minha cabeca vai apontar para o o mesmo lugar que o o elemento prox que ela aponta apontar
             free(aux); //liberando o auxiliar (primeiro elemento da lista)
@@ -54,12 +69,14 @@ void LiberaL(Lista* li){ //libera a lista por completo
 
 
 
-int ConsultaNome(Lista* li, char *nome){ //completa
+int ConsultaNome(Lista* li, char *nome) //falta
+{ //completa
     Elem *aux;
     if(li == NULL) //lista eh valida (possui elementos)?
         return 0;
     aux = *li; //auxiliar vai apontar para o mesmo elemento que a minha cabeca aponta
-    while(aux != NULL && aux->dados.nome != nome){ //cheguei no fim? achei o nome?
+    while(aux != NULL && aux->dado.nome != nome)
+    { //cheguei no fim? achei o nome?
         aux = aux->prox; //aponta para o prox elemento
     }
     if(aux == NULL) //caso eu nao achei o nome
@@ -68,8 +85,21 @@ int ConsultaNome(Lista* li, char *nome){ //completa
         return aux->dados.id; // retornar ID 
 }
 
+//inserindo arquivos bin na lista
+int insere_do_arq(void)
+{
+    FILE *pt_arq = fopen("index.bin", "rb");         //abrindo arquivo para leitura
+    dado *novo_arq;
+    novo_arq = malloc(sizeof(info));
+    if(!novo_arq)
+        printf("erro de alocacao! \n"); exit(-1);
 
-int InsereL(Lista* li, info coisa){ // carregar a lista com arquivos salvos, para depois fazer a consulta do nome. no main passar os arquivos
+    fread(novo_arq, sizeof(dado),1 ,pt_arq); // ou &novo_arq
+    return (InsereL(li, novo_arq));
+}
+int InsereL(Lista *li, dado coisa) //falta coisas
+{ // carregar a lista com arquivos salvos, para depois fazer a consulta do nome. no main passar os arquivos
+
     if(li == NULL) // a lista eh valida (esta vazia) ?
         return 0;
     Elem *no; //criando ponteiro para elemento a ser inserido

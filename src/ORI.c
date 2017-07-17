@@ -5,6 +5,7 @@
 //protótiopo base
 
 int inserir(int count, char *name, double val);
+dado pesquisa(int id);
 
 typedef struct
 {
@@ -79,5 +80,28 @@ int inserir(int count, char *name, double val)
     free(novo_ind);                    //fechamento
     fclose(pt_arq);
     free(novo_arq);
-     
 }
+
+dado pesquisa(int id)
+{
+    FILE *pt_arq = fopen("arquivo.bin", "rb");         //abrindo arquivo para leitura
+    dado *novo_arq;
+    novo_arq = malloc(sizeof(dado));
+    if(!novo_arq)
+        printf("erro de alocacao! \n"); exit(-1);
+
+    fseek(pt_arq, sizeof(dado) * id, SEEK_SET) // mover o ponteiro para a posicao do ID ou (id -1)
+
+    fread(novo_arq, sizeof(dado),1 ,pt_arq); // ou &novo_arq
+
+    return novo_arq;
+}
+
+
+
+
+
+
+
+
+
