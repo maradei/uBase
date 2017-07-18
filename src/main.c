@@ -1,13 +1,10 @@
-#include<stdio.h>
+#include "includes.h"
 
-int main(int argc, char *argv[])
+int main( int argc, char *argv[ ] )
 {
-  int i;
-  if(argc > 1){
-    for(i = 0; i < argc; i++){
-      printf("%s\n", argv[i]);
-    }    
-  }
-
-  return 0;
+	if(argc == 1)
+		help(0);
+	else
+		printf("Função De Jefson\n");
+    return 0;
 }
