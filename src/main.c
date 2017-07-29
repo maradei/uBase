@@ -8,5 +8,5 @@ int main( int argc, char *argv[ ] )
 		help(0);
 	else
 		interpretar(argc, argv);
-    return 0;
+	return 0;
 }
