@@ -4,6 +4,10 @@ set(target uBase)
 
 set(sources
 	main.c
+	help.c
+	interpretar.c
+	criar.c
+	ordenar.c
 )
 
 add_executable(${target} ${sources})
