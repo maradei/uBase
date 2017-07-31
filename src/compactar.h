@@ -1,0 +1,1 @@
+void compactar(int,char**);
