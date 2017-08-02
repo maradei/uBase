@@ -4,6 +4,7 @@
 #include <string.h>
 #include "help.h"
 #include "compactar.h"
+#include "remover.h"
 
 void interpretar(int n, char **vetor){
   if(strcmp(vetor[1], "-criar") == 0 ||strcmp(vetor[1], "-c") == 0)
@@ -27,10 +28,11 @@ void interpretar(int n, char **vetor){
         if(n < 3)
           // printf("Chamar a função HELP para Remover\n"); // help(0)
           help(9);
-        else
+        else{
           // printf("Chama a função remover\n"); // remover(n, vetor);
-          // remover(n,vetor);
-          printf("Chama a função remover\n");
+          remover(n,vetor);
+          //printf("Chama a função remover\n");
+        }
       else
         if(strcmp(vetor[1], "-buscar") == 0 ||strcmp(vetor[1], "-b") == 0)
           if(n < 3)
