@@ -10,7 +10,7 @@ typedef int (*fPtrRemover) (int, char **);
 char ** split(int n, char *vet);
 
 int remover(int n, char **vet){
-	char **arquivoAtributo;
+	char **arquivoAtributo = NULL;
 	int retorno = 1;
 
 	if(vet == NULL){
@@ -23,11 +23,11 @@ int remover(int n, char **vet){
 		}
 		else if(arquivoAtributo[2] != NULL){
 			if(strlen(arquivoAtributo[2]) > 0){
-				if(n < 4){
+				if(n == 3){
 					printf("Remover da tabela %s\n", arquivoAtributo[1]);
-					printf("O Campo %s\n", arquivoAtributo[2]);		
+					printf("O Campo %s\n", arquivoAtributo[2]);
 				}
-				else if(n > 4){
+				else if(n == 5){
 					printf("Remover da tabela: %s\n", arquivoAtributo[1]);
 					printf("Campo: %s\n", arquivoAtributo[2]);
 					printf("Chave: %s\n", vet[3]);
@@ -41,8 +41,16 @@ int remover(int n, char **vet){
 				help(9);
 			}
 		}
-		else{
+		else if(n == 3){
 			printf("Remover a tabela %s\n", arquivoAtributo[1]);
+		}
+		else if(n == 5){
+			printf("Remover da tabela %s\n", arquivoAtributo[1]);
+			printf("Chave: %s\n", vet[3]);
+			printf("Chave Valor: %s\n", vet[4]);
+		}
+		else{
+			help(9);
 		}
 	}
 	else{
