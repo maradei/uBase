@@ -7,6 +7,7 @@ set(sources
 	help.c
 	interpretar.c
 	criar.c
+	remover.c
 	ordenar.c
 	compactar.c
 )
