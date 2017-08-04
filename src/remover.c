@@ -81,7 +81,7 @@ void remover(int n, char **vet){
 	else{
 		help(9);
 	}
-
+	
 	if(arquivoAtributo[0] != NULL){
 		freeSeguro(arquivoAtributo[0]);
 	}
