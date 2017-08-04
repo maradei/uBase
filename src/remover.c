@@ -2,16 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "help.h"
+#include "bibliotecaRemover.h"
+#include "bibliotecaAlocacao.h"
+#include "bibliotecaStrings.h"
 
-#define limiteTamArgumento 50
-
-typedef int (*fPtrRemover) (int, char **);
-
-char ** split(int n, char *vet);
-
-int remover(int n, char **vet){
+void remover(int n, char **vet){
 	char **arquivoAtributo = NULL;
-	int retorno = 1;
+	char **vetDados = NULL;
+	char resposta;
 
 	if(vet == NULL){
 		printf("Erro de argumento!\n");
@@ -21,17 +19,22 @@ int remover(int n, char **vet){
 		if(arquivoAtributo == NULL){
 			help(9);
 		}
-		else if(arquivoAtributo[2] != NULL){
-			if(strlen(arquivoAtributo[2]) > 0){
+		else if(arquivoAtributo[1] != NULL){
+			if(strlen(arquivoAtributo[1]) > 0){
 				if(n == 3){
-					printf("Remover da tabela %s\n", arquivoAtributo[1]);
-					printf("O Campo %s\n", arquivoAtributo[2]);
+					printf("Remover da tabela %s\n", arquivoAtributo[0]);
+					printf("O Campo %s\n", arquivoAtributo[1]);
 				}
 				else if(n == 5){
-					printf("Remover da tabela: %s\n", arquivoAtributo[1]);
-					printf("Campo: %s\n", arquivoAtributo[2]);
+					printf("Remover da tabela: %s\n", arquivoAtributo[0]);
+					printf("Campo: %s\n", arquivoAtributo[1]);
 					printf("Chave: %s\n", vet[3]);
 					printf("Valor da Chave: %s\n", vet[4]);
+					vetDados = alocarVetStrings(4);
+					vetDados[0] = arquivoAtributo[0];
+					vetDados[1] = arquivoAtributo[1];
+					vetDados[2] = vet[3];
+					vetDados[3] = vet[4];
 				}
 				else{
 					help(9);
@@ -42,12 +45,34 @@ int remover(int n, char **vet){
 			}
 		}
 		else if(n == 3){
-			printf("Remover a tabela %s\n", arquivoAtributo[1]);
+			printf("Tem certeza que deseja excluir a tabela %s?\n", arquivoAtributo[0]);
+			resposta = getchar();
+			if(resposta == 's' || resposta == '\n'){
+				printf("Removendo a tabela %s...\n", arquivoAtributo[0]);
+				switch(removerTabela(arquivoAtributo[0])){
+					case 1:{
+						printf("Arquivo deletado!\n");
+						break;
+					}
+					case -1:{
+						printf("Arquivo nao existe!\n");
+						break;
+					}
+					default:{
+						printf("Erro ao deletar arquivo!\n");
+						break;
+					}
+				}	
+			}
 		}
 		else if(n == 5){
-			printf("Remover da tabela %s\n", arquivoAtributo[1]);
+			printf("Remover da tabela %s\n", arquivoAtributo[0]);
 			printf("Chave: %s\n", vet[3]);
 			printf("Chave Valor: %s\n", vet[4]);
+			vetDados = alocarVetStrings(3);
+			vetDados[0] = arquivoAtributo[0];
+			vetDados[1] = vet[3];
+			vetDados[2] = vet[4];
 		}
 		else{
 			help(9);
@@ -57,56 +82,16 @@ int remover(int n, char **vet){
 		help(9);
 	}
 
-	return 1; //Consertar retorno depois
+	if(arquivoAtributo[0] != NULL){
+		freeSeguro(arquivoAtributo[0]);
+	}
+	if(arquivoAtributo[1] != NULL){
+		freeSeguro(arquivoAtributo[1]);
+	}
+	if(arquivoAtributo != NULL){
+		freeSeguro(arquivoAtributo);
+	}
+	if(vetDados != NULL){
+		freeSeguro(vetDados);
+	}
 }
-
-char ** split(int n, char *vet){
-	char **vetResult = NULL;
-	int i,j,c;
-
-	if(n > limiteTamArgumento){ //Limitando alocação
-		return NULL;
-	}
-
-	for(i=0;i<n;i++){
-		if(vet[i] == '.'){
-			break;
-		}
-	}
-
-	if(i < 1){
-		return NULL;
-	}
-
-	vetResult = malloc(2*sizeof(char *));
-	if(vetResult == NULL){
-		exit(-1);
-		printf("Erro de alocação!\n");
-	}
-
-	vetResult[1] = malloc(i*sizeof(char));
-	if(vetResult[1] == NULL){
-		exit(-1);
-		printf("Erro de alocação!\n");
-	}
-
-	for(j=0;j<i;j++){
-		vetResult[1][j] = vet[j];
-	}
-
-	if(i < n){
-		i++;
-
-		vetResult[2] = malloc(i*sizeof(char));
-		if(vetResult[2] == NULL){
-			exit(-1);
-			printf("Erro de alocação!\n");
-		}
-
-		for(j=i, c=0;j<n;j++, c++){
-			vetResult[2][c] = vet[j];
-		}
-	}
-	return vetResult;
-}
-
