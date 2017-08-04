@@ -9,7 +9,6 @@
 void remover(int n, char **vet){
 	char **arquivoAtributo = NULL;
 	char **vetDados = NULL;
-	char resposta;
 
 	if(vet == NULL){
 		printf("Erro de argumento!\n");
@@ -45,8 +44,6 @@ void remover(int n, char **vet){
 			}
 		}
 		else if(n == 3){
-			printf("Tem certeza que deseja excluir a tabela %s?\n", arquivoAtributo[0]);
-			resposta = getchar();
 			if(resposta == 's' || resposta == '\n'){
 				printf("Removendo a tabela %s...\n", arquivoAtributo[0]);
 				switch(removerTabela(arquivoAtributo[0])){
