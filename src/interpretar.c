@@ -4,6 +4,7 @@
 #include <string.h>
 #include "help.h"
 #include "compactar.h"
+#include "descompactar.h"
 #include "remover.h"
 
 void interpretar(int n, char **vetor){
@@ -49,18 +50,18 @@ void interpretar(int n, char **vetor){
               printf("Chama a função -o\n");
           else
             if(strcmp(vetor[1], "-compactar") == 0 ||strcmp(vetor[1], "-cmp") == 0)
-              if(n < 3)
+              if(n < 4)
                 help(3);
               else
                 compactar(n,vetor);
                 //printf("Chama a função -c\n");
             else
               if(strcmp(vetor[1], "-descompactar") == 0 ||strcmp(vetor[1], "-dcmp") == 0)
-                if(n < 2)
+                if(n < 3)
                   help(4);
                 else
-                  // descompactar(n,vetor);
-                  printf("Chama a função -dc\n");
+                  descompactar(n,vetor);
+                  //printf("Chama a função -dc\n");
               else
                 if(strcmp(vetor[1], "-criptografar") == 0 ||strcmp(vetor[1], "-cpt") == 0)
                   if(n < 2)
