@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include "bibliotecaCompactacao.h"
+
 void compactar(int n,char**vetor)
 {
-  printf("não implementado\n");
+  runLengthEncodeComp(vetor[2]);
 }
