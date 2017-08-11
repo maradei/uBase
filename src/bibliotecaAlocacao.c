@@ -19,3 +19,15 @@ void freeSeguro(void *vet){
 		vet = NULL;
 	}
 }
+
+char* aloca (int n)
+{
+	char *vet;
+
+	vet= malloc (n*sizeof(char));
+	if (vet==NULL){
+		printf("Erro de alcacao\n");
+	}
+
+	return vet;
+} 

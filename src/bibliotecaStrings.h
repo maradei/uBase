@@ -35,3 +35,21 @@ char * getCaminhoTabela(char *);
 ****/
 
 char ** split(int, char *);
+
+/****
+*
+* TÍTULO: FUNÇÃO de conversão, inteiro para string. 
+*
+* AUTOR: TULIO CAMPOS SILVA
+*
+* DATA DA CRIAÇÃO: 09/08/17
+* ÚLTIMA MODIFICAÇÃO: 09/08/17
+*
+* DESCRIÇÃO: Esta função irá receber um inteiro e convertê-lo para string.
+*
+* PARÂMETROS: - (int): O número a ser convertido.
+* 	      - (char**): O ponteiro duplo ao vetor de char.
+*
+* VALOR DE RETORNO: - (void): 
+****/
+void intToString(int, char **);
