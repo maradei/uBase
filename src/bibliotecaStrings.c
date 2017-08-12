@@ -71,3 +71,12 @@ char ** split(int n, char *vet){
 	}
 	return vetResult;
 }
+
+void intToString(int num, char **str){
+        if(str == NULL)
+        {
+            exit (-1);
+        }
+        sprintf(*str, "%d", num);
+        
+}

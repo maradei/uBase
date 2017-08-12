@@ -10,9 +10,13 @@ set(sources
 	remover.c
 	ordenar.c
 	compactar.c
+	descompactar.c
 	bibliotecaRemover.c
 	bibliotecaAlocacao.c
 	bibliotecaStrings.c
+	bibliotecaOperacoes.c
+	bibliotecaCompactacao.c
+	bibliotecaDescompactacao.c
 )
 
 add_executable(${target} ${sources})

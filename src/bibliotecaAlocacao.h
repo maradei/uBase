@@ -33,3 +33,20 @@ char ** alocarVetStrings(int);
 ****/
 
 void freeSeguro(void *);
+
+/****
+*
+* TÍTULO: 
+*
+* AUTOR: 
+*
+* DATA DA CRIAÇÃO: 
+* ÚLTIMA MODIFICAÇÃO: 
+*
+* DESCRIÇÃO: 
+*
+* PARÂMETROS: - (): 
+*
+* VALOR DE RETORNO: - (): 
+****/
+char* aloca (int n);
