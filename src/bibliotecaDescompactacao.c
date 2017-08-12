@@ -7,7 +7,7 @@
 void runLengthEncodeDescomp(char *arquivoEntrada){
 	FILE *ptre, *ptrs;
 	char c, *vetNum, cont, *caminho;
-	int num;
+	int num,i;
 
 	caminho = getCaminhoTabela(arquivoEntrada);
 
@@ -42,7 +42,7 @@ void runLengthEncodeDescomp(char *arquivoEntrada){
 
 			fread (&c,sizeof (char),1, ptre);
 
-			for (int i = 0;i<num;i++ )
+			for ( i = 0;i<num;i++ )
 			{
 
 				fwrite(&c,sizeof(char),1, ptrs);
