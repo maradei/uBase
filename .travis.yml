@@ -46,3 +46,5 @@ script:
   - cd build
   - cmake -DCMAKE_CC_COMPILER=$COMPILER .. && make
   - ./uBase
+  - ./uBase -h -c
+  - ./uBase -h -r
