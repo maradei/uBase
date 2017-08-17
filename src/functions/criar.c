@@ -1,90 +1,82 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+int criar(int, char**);
+char* alocaMemoria(int, char*);
+int inserir(int, char**);
+void criaArquivo(int, char**);
+void separa(char**);
 
-void separa (char**);
-char* alocaMem (char*);
-FILE* criaArquivo(char*);
-void criaCampo(FILE*, char*);
-void criar (int, char** );
+typedef struct
+{
+	int id_tab, id_campo, id_geral;
+	int val_i;
+	double val_d;
+	char *val_s;
+	int typ;
+    int ponteiro;
+	 // 1 = int, 2 = dou, 3 = string/char
+}bloco;
 
-//#include "includes.h"
+typedef struct
+{
+    char *nomeDoArquivo;
+    char *campo;
+    char *tipo;
+    int idgeral;
+}Parametro;
+
+typedef struct
+{
+    char *nome;
+    int id;
+}Tabela;
 
 int main( int argc, char *argv[])
 {
     criar(argc, argv);
+    inserir(argc, argv);
     return 0;
 }
 
-void separa(char** comandos)
+int criar(int argc, char* argv[])
+{
+    FILE* stream;
+    Tabela *ptr;
+
+    stream = fopen(argv[2], "wb");
+    ptr = malloc(sizeof(Tabela));
+
+    ptr.id += 1;
+    ptr.nome = argv[2];
+
+    return 1;
+}
+
+
+char* alocaMemoria(int tam, char* ptrC)
+{
+    ptrC = malloc((sizeof(char) * tam) + 4);
+    if(ptrC == NULL)
+    {
+        printf("Erro de Alocação ! (função Criar)");
+        exit(-1);
+    }
+    return ptrC;
+
+int inserir(int argc, char* argv[])
+{
+    separa(argv);
+
+
+}
+
+void separa(char** argv)
 {
     int i = 0, j = 0, flag = 0;
     char * nomeAtributo;
-    char * nomeArquivo;
 
-    nomeArquivo = alocaMem(nomeArquivo);
-    nomeAtributo = alocaMem(nomeAtributo);
+    nomeAtributo = malloc(sizeof(char) * 100);
 
-    while(comandos[i] != '\0')
-    {
-        if(flag == 0 && comandos[i] != '.')
-            nomeArquivo[i] = comandos[i];
+    for(i = 0; argv[2][i] != '.';i++)
 
-        if( comandos[i] == '.' || flag == 1 )
-        {
-            if (flag == 0)
-                nomeArquivo[i + 1] = '\0';
-
-            flag = 1;
-
-            if(comandos [i] != '.')
-            {
-                nomeAtributo[j] = comandos[i];
-                j++;
-            }
-        }
-
-        i++;
-    }
-
-    nomeAtributo[j + 1] = '\0';
-
-    criaArquivo(nomeArquivo);
-
-}
-
-char* alocaMem (char* ptr)
-{
-    ptr = malloc(50 * sizeof(char));
-        if(ptr == NULL)
-        {
-            printf("Erro de Alocacao!");
-            exit(-1);
-        }
-    return ptr;
-}
-
-FILE* criaArquivo(char* nomeArquivo )
-{
-    FILE* arquivo;
-
-    arquivo = fopen(nomeArquivo, "wb");
-
-    if(arquivo == NULL)
-    {
-        printf("Erro na criacao do arquivo!");
-        return;
-    }
-
-    return arquivo;
-
-}
-
-void criaCampo(FILE* arquivo, char* nomeAtributo)
-{
-    printf("falta implementar");
-}
-
-void criar(int qtd, char** comandos)
-{
-    separa(comandos);
 }
