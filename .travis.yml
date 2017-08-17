@@ -45,4 +45,6 @@ script:
   - mkdir build
   - cd build
   - cmake -DCMAKE_CC_COMPILER=$COMPILER .. && make
-  - ./uBase -remover NOME_ARQUIVO
+  - ./uBase
+  - ./uBase -h -c
+  - ./uBase -h -r

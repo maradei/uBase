@@ -4,6 +4,20 @@ set(target uBase)
 
 set(sources
 	main.c
+	help.c
+	interpretar.c
+	criar.c
+	remover.c
+	ordenar.c
+	compactar.c
+	descompactar.c
+	bibliotecaRemover.c
+	bibliotecaAlocacao.c
+	bibliotecaStrings.c
+	bibliotecaOperacoes.c
+	bibliotecaCompactacao.c
+	bibliotecaDescompactacao.c
+	bibliotecaCriar.c
 )
 
 add_executable(${target} ${sources})

@@ -1,0 +1,4 @@
+src/functions/help.h
+src/functions/interpretar
+src/functions/interpretar.c
+build/*

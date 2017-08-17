@@ -1,0 +1,12 @@
+/****
+*
+* TÍTULO: FUNÇÃO PARA INTERPRETAR OS COMANDOS DO PROGRAMA
+* AUTOR: JEFSON ALVES MATOS
+*
+* DATA DA CRIAÇÃO: 14/07/2017
+* ÚLTIMA MODIFICAÇÃO: 20/07/2017
+*
+*
+****/
+
+void interpretar(int , char **);
