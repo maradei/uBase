@@ -8,13 +8,13 @@ char * getCaminhoTabela(char *nomeTabela){
 	int tam;
 	char *caminho = NULL;
 	if(nomeTabela != NULL){
-		tam = strlen(nomeTabela) + 11;
-		caminho = (char *) malloc(tam*sizeof(char));	
+		tam = strlen(nomeTabela) + 11; //Tamanho do caminho a ser alocado
+		caminho = (char *) malloc(tam*sizeof(char));
 		if(caminho == NULL){
 			exit(-1);
 			printf("Erro de alocacao!\n");
 		}
-		strcat(nomeTabela,".ori");
+		strcat(nomeTabela,".ori"); //Concatenando o nome da tabela com os dados do caminho
 		strcat(caminho,"dados/");
 		strcat(caminho,nomeTabela);
 	}
@@ -30,13 +30,13 @@ char ** split(int n, char *vet){
 		return NULL;
 	}
 
-	for(i=0;i<n;i++){
+	for(i=0;i<n;i++){ //Anda até o ponto
 		if(vet[i] == '.'){
 			break;
 		}
 	}
 
-	if(i < 1){
+	if(i < 1){ //Se existe nome de tabela
 		return NULL;
 	}
 
@@ -46,26 +46,26 @@ char ** split(int n, char *vet){
 		printf("Erro de alocação!\n");
 	}
 
-	vetResult[0] = malloc(i*sizeof(char));
+	vetResult[0] = malloc(i*sizeof(char)); //Aloca vetor para nome de tabela
 	if(vetResult[0] == NULL){
 		exit(-1);
 		printf("Erro de alocação!\n");
 	}
 
-	for(j=0;j<i;j++){
+	for(j=0;j<i;j++){ //Separando o nome da tabela
 		vetResult[0][j] = vet[j];
 	}
 
-	if(i < n){
+	if(i < n){ //Se existe um atributo
 		i++;
 
-		vetResult[1] = malloc((n-i)*sizeof(char));
+		vetResult[1] = malloc((n-i)*sizeof(char)); //Aloca vetor para nome de atributo
 		if(vetResult[1] == NULL){
 			exit(-1);
 			printf("Erro de alocação!\n");
 		}
 
-		for(j=i, c=0;j<n;j++, c++){
+		for(j=i, c=0;j<n;j++, c++){ //Separando o nome do atributo
 			vetResult[1][c] = vet[j];
 		}
 	}
@@ -79,4 +79,11 @@ void intToString(int num, char **str){
         }
         sprintf(*str, "%d", num);
         
+}
+
+char* catChStr(char* sString, char cChar){
+    size_t len = strlen(sString);
+    sString[len++] = cChar;
+    sString[len] = '\0';
+    return sString;
 }
