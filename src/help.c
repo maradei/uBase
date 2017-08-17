@@ -44,7 +44,8 @@ void help(int op){
 		case 9://Remover
 			printf("-r, -remover nome_tabela\t\t\t\tRemove uma tabela\n");
 			printf("-r, -remover nome_tabela.campo\t\t\t\tRemove um campo da tabela\n");
-			printf("-r, -remover nome_tabela.nome_campo -nome_registro\tRemove um registro\n");
+			printf("-r, -remover nome_tabela -chave valor_chave\tRemove um registro\n");
+			printf("-r, -remover nome_tabela.nome_campo -valor val\tRemove todos os registros de mesmo valor no campo nome_campo\n");
 			break;
 		default:
 			break;
