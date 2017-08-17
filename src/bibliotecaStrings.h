@@ -53,3 +53,21 @@ char ** split(int, char *);
 * VALOR DE RETORNO: - (void): 
 ****/
 void intToString(int, char **);
+
+/****
+*
+* TÍTULO: FUNÇÃO DE CONCATENAÇÃO DE UM CHAR A UMA STRING
+*
+* AUTOR: ÍCARO MARADEI COSTA BORGES
+*
+* DATA DA CRIAÇÃO: 12/08/17
+* ÚLTIMA MODIFICAÇÃO: 17/08/17
+*
+* DESCRIÇÃO: ESTA FUNÇÃO IRÁ RECEBER UMA STRING E UM CHAR, E CONCATENAR ESTE CHAR AO FINAL DA STRING
+*
+* PARÂMETROS: - (char* ): A STRING ORIGINAL QUE SERÁ ALTERADA
+* 	          - (char): O CHAR QUE SERÁ CONCATENADO AO FINAL DA STRING
+*
+* VALOR DE RETORNO: - (char*): A STRING CONCATENADA AO CHAR 
+****/
+char* catChStr(char* sString, char cChar);
