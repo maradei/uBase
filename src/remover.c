@@ -12,24 +12,24 @@ void remover(int n, char **vet){
 
 	if(vet == NULL){
 		printf("Erro de argumento!\n");
-	}
-	else if(n < 6){
+	}	
+	else if(n < 6){ //No máximo 5 argumentos
 		arquivoAtributo = split(strlen(vet[2]), vet[2]);
 		if(arquivoAtributo == NULL){
 			help(9);
 		}
-		else if(arquivoAtributo[1] != NULL){
+		else if(arquivoAtributo[1] != NULL){ //Se existe um atributo depois do nome da tabela: NOME_TABELA.NOME_ATRIBUTO
 			if(strlen(arquivoAtributo[1]) > 0){
-				if(n == 3){
+				if(n == 3){ //Comando: ./uBase -remover NOME_TABELA.NOME_CAMPO
 					printf("Remover da tabela %s\n", arquivoAtributo[0]);
 					printf("O Campo %s\n", arquivoAtributo[1]);
 				}
-				else if(n == 5){
+				else if(n == 5){ //Comando: ./uBase -remover NOME_TABELA.NOME_CAMPO -VALOR VAL
 					printf("Remover da tabela: %s\n", arquivoAtributo[0]);
 					printf("Campo: %s\n", arquivoAtributo[1]);
-					printf("Chave: %s\n", vet[3]);
-					printf("Valor da Chave: %s\n", vet[4]);
-					vetDados = alocarVetStrings(4);
+					printf("Comando: %s\n", vet[3]);
+					printf("Valor: %s\n", vet[4]);
+					vetDados = alocarVetStrings(4); //Organizando os dados
 					vetDados[0] = arquivoAtributo[0];
 					vetDados[1] = arquivoAtributo[1];
 					vetDados[2] = vet[3];
@@ -43,7 +43,7 @@ void remover(int n, char **vet){
 				help(9);
 			}
 		}
-		else if(n == 3){
+		else if(n == 3){ //Comando: ./uBase -remover NOME_TABELA
 			printf("Removendo a tabela %s...\n", arquivoAtributo[0]);
 			switch(removerTabela(arquivoAtributo[0])){
 				case 1:{
@@ -59,12 +59,12 @@ void remover(int n, char **vet){
 					break;
 				}
 			}	
-		}
-		else if(n == 5){
+		}		
+		else if(n == 5){ //Comando: ./uBase -remover NOME_TABELA -CHAVE VALOR_CHAVE
 			printf("Remover da tabela %s\n", arquivoAtributo[0]);
 			printf("Chave: %s\n", vet[3]);
 			printf("Chave Valor: %s\n", vet[4]);
-			vetDados = alocarVetStrings(3);
+			vetDados = alocarVetStrings(3); //Organizando os dados
 			vetDados[0] = arquivoAtributo[0];
 			vetDados[1] = vet[3];
 			vetDados[2] = vet[4];
