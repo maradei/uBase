@@ -6,14 +6,15 @@
 #include "compactar.h"
 #include "descompactar.h"
 #include "remover.h"
+#include "criar.h"
 
 void interpretar(int n, char **vetor){
   if(strcmp(vetor[1], "-criar") == 0 ||strcmp(vetor[1], "-c") == 0)
     if(n < 2)
       help(2);
     else
-    printf("Chama a função c\n");
-      // criar(n,vetor);
+      //printf("Chama a função c\n");
+      criar(n,vetor);
   else if(strcmp(vetor[1], "-inserir") == 0 ||strcmp(vetor[1], "-i") == 0)
     if(n < 3)
       // printf("Chamar a função HELP para inserir\n");
