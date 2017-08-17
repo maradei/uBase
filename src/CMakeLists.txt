@@ -18,6 +18,7 @@ set(sources
 	bibliotecaCompactacao.c
 	bibliotecaDescompactacao.c
 	bibliotecaCriar.c
+	inserir.c
 )
 
 add_executable(${target} ${sources})
