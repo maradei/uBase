@@ -12,9 +12,9 @@
 * Última modificação: 17/ 08/ 2017
 *
 *
-* Descrição: A função recebe uma string que contém os parâmetros no formato (> uBase –inserir) NOME_ARQUIVO.NOME_ATRIBUTO –valor –id. 
+* Descrição: A função lê os parâmetros no formato (> uBase –inserir) NOME_ARQUIVO.NOME_ATRIBUTO –valor –id. 
 * A função é executada analisando os parâmetros ,que trazem um valor após o campo "-valor" que podem ser um inteiro, ou float ou char,
-* e salvando o parâmetro que vem após "–valor" na tabelaindicado pelo parâmetro "NOME_ARQUIVO", no campo indicado pelo parâmetro 
+* e salvando o parâmetro que vem após "–valor" na tabela indicado pelo parâmetro "NOME_ARQUIVO", no campo indicado pelo parâmetro 
 * "NOME_ATRIBUTO" na posição indicado pelo parâmetro que vem após "–id"  na tabela indicada pelo parâmetro "NOME_ARQUIVO" 
 *
 *
