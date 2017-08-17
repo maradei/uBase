@@ -80,3 +80,10 @@ void intToString(int num, char **str){
         sprintf(*str, "%d", num);
         
 }
+
+char* catChStr(char* sString, char cChar){
+    size_t len = strlen(sString);
+    sString[len++] = cChar;
+    sString[len] = '\0';
+    return sString;
+}
