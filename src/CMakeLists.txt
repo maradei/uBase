@@ -21,6 +21,11 @@ set(sources
 	huffman.c
 =======
 	bibliotecaCriar.c
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
+	susbtituicao.c
+	selecaonatural.c
 >>>>>>> upstream/master
 )
 

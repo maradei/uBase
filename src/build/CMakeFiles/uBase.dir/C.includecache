@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pedrecal/Documents/uBase/src/selecaonatural.c
+stdio.h
+-
+stdlib.h
+-
+
+/home/pedrecal/Documents/uBase/src/susbtituicao.c
+stdio.h
+-
+stdlib.h
+-
+
