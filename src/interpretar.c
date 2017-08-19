@@ -8,6 +8,7 @@
 #include "criar.h"
 #include "bibliotecaCompactacao.h"
 #include "huffman.h"
+#include "inserir.h"
 
 void interpretar(int n, char **vetor){
   if(strcmp(vetor[1], "-criar") == 0 ||strcmp(vetor[1], "-c") == 0)
@@ -22,8 +23,7 @@ void interpretar(int n, char **vetor){
       help(7);
     else
     //chamo a função insterir
-      // inserir(n,vetor);
-      printf("Chama a função i\n");
+      inserir(n,vetor);
     else if(strcmp(vetor[1], "-remover") == 0 ||strcmp(vetor[1], "-r") == 0)
       if(n < 3)
         // printf("Chamar a função HELP para Remover\n"); // help(0)
