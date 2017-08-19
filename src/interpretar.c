@@ -3,10 +3,12 @@
 #include <string.h>
 #include "help.h"
 #include "compactar.h"
+#include "compactar_lz78.h"
 #include "descompactar.h"
 #include "remover.h"
 #include "criar.h"
 #include "bibliotecaCompactacao.h"
+#include "bibliotecaCompactar_lz78.h"
 #include "huffman.h"
 #include "inserir.h"
 
@@ -59,7 +61,7 @@ void interpretar(int n, char **vetor){
 				printf("Função não implementada");
 				break;
 			case 4: // LZ78
-				printf("Função não implementada");
+				char** dicionario = compactar_lz78(vetor[2], strlen(vetor[2]), strlen(vetor[2]))
 				break;
 			default:
 				printf("Esse tipo de compactação não existe.\n\n");
