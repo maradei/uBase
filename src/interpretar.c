@@ -50,23 +50,23 @@ void interpretar(int n, char **vetor){
         help(3);
       else
         switch(atoi(vetor[4])){
-						case 1: // RunLengthEncode
-							compactar(vetor[2],runLengthEncodeComp);
-							break;
-						case 2:// Huffman
-							compactar(vetor[2],huffman);
-							break;
-						case 3: // LZ77
-							printf("Função não implementada");
-							break;
-						case 4: // LZ78
-							printf("Função não implementada");
-							break;
-						default:
-							printf("Esse tipo de compactação não existe.\n\n");
-							help(3);
-							break;
-						}
+			case 1: // RunLengthEncode
+				compactar(vetor[2],runLengthEncodeComp);
+				break;
+			case 2:// Huffman
+				compactar(vetor[2],huffman);
+				break;
+			case 3: // LZ77
+				printf("Função não implementada");
+				break;
+			case 4: // LZ78
+				printf("Função não implementada");
+				break;
+			default:
+				printf("Esse tipo de compactação não existe.\n\n");
+				help(3);
+				break;
+		}
     else if(strcmp(vetor[1], "-descompactar") == 0 ||strcmp(vetor[1], "-dcmp") == 0)
       if(n < 3)
         help(4);
