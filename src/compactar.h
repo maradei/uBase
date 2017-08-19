@@ -1,19 +1,18 @@
 /****
 *
-* TÍTULO: FUNÇÃO de compactação. 
+* TÍTULO: FUNÇÃO PARA COMPACTAR TABELAS DO BANCO DE DADOS. 
 *
-* AUTOR: TULIO CAMPOS SILVA
+* AUTOR: FELIPE OLIVEIRA CARDOSO
 *
-* DATA DA CRIAÇÃO: 09/08/17
-* ÚLTIMA MODIFICAÇÃO: 09/09/17
+* DATA DA CRIAÇÃO: 05/08/2017
+* ÚLTIMA MODIFICAÇÃO: 14/08/2017
 *
-* DESCRIÇÃO: Esta função irá receber um vetor (argumento do usuario) o qual irá conter o nome do arquivo/tabela que sofrerá a compactação.
-* O nome do arquivo será passado como parâmetro para o tipo de compactação escolhida.
 *
-* PARÂMETROS: - (int): O tamanho do vetor.
-* 	      - (char**): O ponteiro duplo ao vetor de char.
+* PARÂMETROS: - (char*): 			STRING CONTENDO O NOME DA TABELA QUE SERÁ COMPACTADA.
+* 			  - (fptrCompactar*):   PONTEIRO PARA A FUNÇÃO QUE SERÁ USADA PARA COMPACTAR.
 *
 * VALOR DE RETORNO: - (void): 
 ****/
+#include "fptrCompactar.h"
 
-void compactar(int, char**);
+void compactar(char*, fptrCompactar);

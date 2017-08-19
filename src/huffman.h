@@ -1,0 +1,17 @@
+/****
+*
+* TÍTULO: FUNÇÃO PARA COMPACTAR UTILIZANDO A CODIFICAÇÃO DE HUFFMAN
+* AUTOR: FELIPE OLIVEIRA CARDOSO
+*
+* DATA DA CRIAÇÃO: 01/08/2017
+* ÚLTIMA MODIFICAÇÃO: 17/08/2017
+* 
+* PARÂMETROS: - (char*) String contendo o nome do arquivo que sera compactado
+*
+* VALOR DE RETORNO: A FUNÇÃO NÃO POSSUI RETORNO
+*
+* VALOR DE RETORNO: A FUNÇÃO NÃO POSSUI RETORNO
+*
+****/
+
+void huffman(char*);

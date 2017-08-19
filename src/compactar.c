@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include "bibliotecaCompactacao.h"
+#include "help.h"
+#include "fptrCompactar.h"
+#include "huffman.h"
 
-void compactar(int n,char**vetor)
-{
-  runLengthEncodeComp(vetor[2]);
+void compactar(char *nome, fptrCompactar fCompactar){
+	if(fCompactar != NULL){
+		fCompactar(nome);
+	}
 }

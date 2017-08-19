@@ -1,0 +1,1 @@
+typedef void (*fptrCompactar)(char*);

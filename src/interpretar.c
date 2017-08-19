@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,7 +6,8 @@
 #include "descompactar.h"
 #include "remover.h"
 #include "criar.h"
-#include "inserir.h"
+#include "bibliotecaCompactacao.h"
+#include "huffman.h"
 
 void interpretar(int n, char **vetor){
   if(strcmp(vetor[1], "-criar") == 0 ||strcmp(vetor[1], "-c") == 0)
@@ -22,7 +22,7 @@ void interpretar(int n, char **vetor){
       help(7);
     else
     //chamo a função insterir
-      inserir(n,vetor);
+      // inserir(n,vetor);
       printf("Chama a função i\n");
     else if(strcmp(vetor[1], "-remover") == 0 ||strcmp(vetor[1], "-r") == 0)
       if(n < 3)
@@ -48,8 +48,24 @@ void interpretar(int n, char **vetor){
       if(n < 4)
         help(3);
       else
-        compactar(n,vetor);
-        //printf("Chama a função -c\n");
+        switch(atoi(vetor[4])){
+			case 1: // RunLengthEncode
+				compactar(vetor[2],runLengthEncodeComp);
+				break;
+			case 2:// Huffman
+				compactar(vetor[2],huffman);
+				break;
+			case 3: // LZ77
+				printf("Função não implementada");
+				break;
+			case 4: // LZ78
+				printf("Função não implementada");
+				break;
+			default:
+				printf("Esse tipo de compactação não existe.\n\n");
+				help(3);
+				break;
+		}
     else if(strcmp(vetor[1], "-descompactar") == 0 ||strcmp(vetor[1], "-dcmp") == 0)
       if(n < 3)
         help(4);
