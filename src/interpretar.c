@@ -6,12 +6,12 @@
 #include "compactar.h"
 #include "descompactar.h"
 #include "remover.h"
-<<<<<<< HEAD
+
 #include "bibliotecaCompactacao.h"
 #include "huffman.h"
-=======
+
 #include "criar.h"
->>>>>>> upstream/master
+
 
 void interpretar(int n, char **vetor){
   if(strcmp(vetor[1], "-criar") == 0 ||strcmp(vetor[1], "-c") == 0)
@@ -70,7 +70,7 @@ void interpretar(int n, char **vetor){
       if(n < 3)
         help(6);
       else
-<<<<<<< HEAD
+
         if(strcmp(vetor[1], "-buscar") == 0 ||strcmp(vetor[1], "-b") == 0)
           if(n < 3)
             help(1);
@@ -130,10 +130,10 @@ void interpretar(int n, char **vetor){
                       // descriptografar(n,vetor);
                       printf("Chama a função -dcp\n");
       }
-=======
+
         // descriptografar(n,vetor);
         printf("Chama a função -dcp\n");
     else if(strcmp(vetor[1], "-help") == 0 ||strcmp(vetor[1], "-h") == 0)
       help(0);
 }
->>>>>>> upstream/master
+
