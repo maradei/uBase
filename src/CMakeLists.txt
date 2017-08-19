@@ -17,16 +17,17 @@ set(sources
 	bibliotecaOperacoes.c
 	bibliotecaCompactacao.c
 	bibliotecaDescompactacao.c
-<<<<<<< HEAD
+
+
 	huffman.c
-=======
+
 	bibliotecaCriar.c
-<<<<<<< HEAD
->>>>>>> upstream/master
-=======
+
+
+
 	susbtituicao.c
 	selecaonatural.c
->>>>>>> upstream/master
+
 )
 
 add_executable(${target} ${sources})
