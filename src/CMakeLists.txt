@@ -24,7 +24,11 @@ set(sources
 	bibliotecaCriar.c
 	susbtituicao.c
 	selecaonatural.c
+
+	inserir.c
+
 	indexsecundaria.c
+
 )
 
 add_executable(${target} ${sources})
